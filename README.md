@@ -51,6 +51,7 @@ The following properties can be set to customize a particular color picker:
   issues with opening the colorpicker in a modal dialog or fixed position container, for instance.
 * `localStorageKey` (default: 'spectrum-color-picker'): the key used for local storage when `showSelectionPalette` is
   set to true.
+* `flatMode` (default: false): when set to true, the color picker is always shown fully expanded.
 
 For a more detailed documentation on these options, see the [spectrum.js documentation](http://bgrins.github.io/spectrum/).
 

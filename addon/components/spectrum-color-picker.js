@@ -7,6 +7,8 @@ export default Ember.Component.extend({
 
   color: null,
 
+  flatMode: false,
+
   allowEmpty: false,
 
   disabled: false,
@@ -52,6 +54,7 @@ export default Ember.Component.extend({
   didInsertElement: function() {
     var opts = {
       color: this.get('color'),
+      flat: this.get('flatMode'),
       allowEmpty: this.get('allowEmpty'),
       disabled: this.get('disabled'),
       showInput: this.get('showInput'),
@@ -73,7 +76,7 @@ export default Ember.Component.extend({
       appendTo: this.get('appendTo'),
       localStorageKey: this.get('localStorageKey')
     };
-    
+
     var self = this;
     var updateFunction = function(newColor) {
       self.set('color', newColor.toHexString());
