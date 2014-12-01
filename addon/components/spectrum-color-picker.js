@@ -63,7 +63,7 @@ export default Ember.Component.extend({
       showButtons: this.get('showButtons'),
       showPalette: this.get('showPalette'),
       showPaletteOnly: this.get('showPaletteOnly'),
-      palette: this.get('palette'),
+      palette: (typeof(this.get('palette')) === 'string') ? JSON.parse(this.get('palette')) : [],
       togglePaletteOnly: this.get('togglePaletteOnly'),
       showSelectionPalette: this.get('showSelectionPalette'),
       hideAfterPaletteSelect: this.get('hideAfterPaletteSelect'),
