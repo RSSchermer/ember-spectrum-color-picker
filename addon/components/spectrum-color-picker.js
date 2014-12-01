@@ -89,5 +89,9 @@ export default Ember.Component.extend({
     }
 
     this.$().spectrum(opts);
-  }
+  },
+
+  updatePicker: function() {
+    this.$().spectrum("set", this.get("color"));
+  }.observes("color")
 });
