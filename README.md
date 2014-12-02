@@ -32,7 +32,7 @@ The following properties can be set to customize a particular color picker:
 * `showPalette` (default: false): whether or not to show a color palette.
 * `showPaletteOnly` (default: false): when set to true, only a color palette is shown.
 * `palette` (default: []): array of color values to show in the palette. Can be an array of arrays, where each array is
-  a row in the palette.
+  a row in the palette. Pass this as a JSON string in the HBS file, like `palette='[["red","lime"],["yellow","blue"]]'`.
 * `togglePaletteOnly` (default: false): initialy shows only the palette, but a 'more' button can be clicked for custom
   colors.
 * `showSelectionPalette` (default: false): shows a palette with the colors that were picked previously by the user.
