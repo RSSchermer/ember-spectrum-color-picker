@@ -1,6 +1,6 @@
 {
   "name": "ember-spectrum-color-picker",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "repository": "https://github.com/rsschermer/ember-spectrum-color-picker",
   "engines": {
     "node": ">= 0.10.0"
