@@ -51,7 +51,7 @@ export default Ember.Component.extend({
 
   localStorageKey: 'spectrum-color-picker',
 
-  didInsertElement: function() {
+  didInsertElement: function () {
     var opts = {
       color: this.get('color'),
       flat: this.get('flatMode'),
@@ -78,7 +78,7 @@ export default Ember.Component.extend({
     };
 
     var self = this;
-    var updateFunction = function(newColor) {
+    var updateFunction = function (newColor) {
       self.set('color', newColor.toString());
     };
 
@@ -91,7 +91,7 @@ export default Ember.Component.extend({
     this.$().spectrum(opts);
   },
 
-  updatePicker: function() {
-    this.$().spectrum("set", this.get("color"));
-  }.observes("color")
+  updatePicker: Ember.observer('color', function () {
+    this.$().spectrum('set', this.get('color'));
+  })
 });

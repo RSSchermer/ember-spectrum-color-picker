@@ -1,4 +1,4 @@
-# Changelog
+# Ember Spectrum color picker change log
 
 ## 0.1.0
 
