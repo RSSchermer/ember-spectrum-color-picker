@@ -5,8 +5,7 @@ Simple Ember color picker component based on [spectrum.js](http://bgrins.github.
 ## Installation
 
 ```
-npm install ember-spectrum-color-picker --save-dev
-ember generate ember-spectrum-color-picker
+ember install ember-spectrum-color-picker
 ```
 
 ## Usage
