@@ -51,8 +51,13 @@ export default Ember.Component.extend({
 
   localStorageKey: 'spectrum-color-picker',
 
-  didInsertElement: function () {
-    var opts = {
+  updatePicker: Ember.observer('color', function () {
+    this.$().spectrum('set', this.get('color'));
+  }),
+
+  didInsertElement() {
+    let palette = this.get('palette');
+    let opts = {
       color: this.get('color'),
       flat: this.get('flatMode'),
       allowEmpty: this.get('allowEmpty'),
@@ -63,7 +68,7 @@ export default Ember.Component.extend({
       showButtons: this.get('showButtons'),
       showPalette: this.get('showPalette'),
       showPaletteOnly: this.get('showPaletteOnly'),
-      palette: (typeof(this.get('palette')) === 'string') ? JSON.parse(this.get('palette')) : this.get('palette'),
+      palette: (typeof(palette) === 'string') ? JSON.parse(palette) : palette,
       togglePaletteOnly: this.get('togglePaletteOnly'),
       showSelectionPalette: this.get('showSelectionPalette'),
       hideAfterPaletteSelect: this.get('hideAfterPaletteSelect'),
@@ -76,9 +81,8 @@ export default Ember.Component.extend({
       appendTo: this.get('appendTo'),
       localStorageKey: this.get('localStorageKey')
     };
-
-    var self = this;
-    var updateFunction = function (newColor) {
+    let self = this;
+    let updateFunction = function (newColor) {
       self.set('color', newColor.toString());
     };
 
@@ -89,9 +93,5 @@ export default Ember.Component.extend({
     }
 
     this.$().spectrum(opts);
-  },
-
-  updatePicker: Ember.observer('color', function () {
-    this.$().spectrum('set', this.get('color'));
-  })
+  }
 });
