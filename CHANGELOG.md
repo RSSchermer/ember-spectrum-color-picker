@@ -1,5 +1,9 @@
 # Ember Spectrum color picker change log
 
+## 0.2.0
+
+The `disabled` property is now a two-way binding so dynamically disabling/enabling is now possible.
+
 ## 0.1.0
 
 Previously the update function would always return the color formatted as a hexadecimal value. This meant that after
