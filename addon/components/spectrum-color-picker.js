@@ -55,6 +55,10 @@ export default Ember.Component.extend({
     this.$().spectrum('set', this.get('color'));
   }),
 
+  updateDisabled: Ember.observer('disabled', function () {
+    this.$().spectrum(this.get('disabled') ? 'disable' : 'enable');
+  }),
+
   didInsertElement() {
     let palette = this.get('palette');
     let opts = {

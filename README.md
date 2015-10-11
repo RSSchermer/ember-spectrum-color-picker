@@ -18,6 +18,8 @@ Example:
 
 The color property should be set and will be updated through Ember's two-way bindings.
 
+The disabled property (optional) can be toggled through Ember's two-way bindings.
+
 The following properties can be set to customize a particular color picker:
 
 * `allowEmpty` (default: `false`): whether or not the color value may be null.
