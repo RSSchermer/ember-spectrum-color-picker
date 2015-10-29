@@ -89,7 +89,7 @@ export default Ember.Component.extend({
     let updateFunction = function (newColor) {
       let color = newColor.toString();
       self.set('color', color);
-      let onChange = this.get('onChange');
+      let onChange = self.get('onChange');
       if (onChange) {
         onChange(color);
       }
