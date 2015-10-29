@@ -16,9 +16,14 @@ Example:
 {{spectrum-color-picker color=teamColor}}
 ```
 
-The color property should be set and will be updated through Ember's two-way bindings.
+The `color` property should be set and will be updated through Ember's two-way bindings.
 
-The disabled property (optional) can be toggled through Ember's two-way bindings.
+It's also possible to bind an action to the `onChange` attribute. The action handler will receive the new color as a
+parameter:
+
+ ``` handlebars
+ {{spectrum-color-picker color=teamColor onChange=(action "colorChanged")}}
+ ```
 
 The following properties can be set to customize a particular color picker:
 
