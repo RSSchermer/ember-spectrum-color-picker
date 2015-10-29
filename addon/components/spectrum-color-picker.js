@@ -87,7 +87,9 @@ export default Ember.Component.extend({
     };
     let self = this;
     let updateFunction = function (newColor) {
-      self.set('color', newColor.toString());
+      let color = newColor.toString()
+      self.sendAction('on-change', color)
+      self.set('color', color);
     };
 
     if (this.get('moveFiresChange')) {
