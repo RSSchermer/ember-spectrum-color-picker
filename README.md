@@ -22,7 +22,7 @@ It's also possible to bind actions to the `onChange`, `onMove`, `onShow`, and `o
 parameter:
 
  ``` handlebars
- {{spectrum-color-picker
+{{spectrum-color-picker
     color=teamColor
     onChange=(action "colorChanged")
     onShow=(action "pickerOpened")
