@@ -21,7 +21,7 @@ The `color` property should be set and will be updated through Ember's two-way b
 It's also possible to bind actions to the `onChange`, `onMove`, `onShow`, and `onHide` attributes. The action handler will receive the new color as a
 parameter:
 
- ``` handlebars
+``` handlebars
 {{spectrum-color-picker
     color=teamColor
     onChange=(action "colorChanged")
@@ -29,7 +29,7 @@ parameter:
     onHide=(action "pickerClosed")
     onMove=(action "userMovedColorPicker")
 }}
- ```
+```
 
 The following properties can be set to customize a particular color picker:
 
