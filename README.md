@@ -18,11 +18,17 @@ Example:
 
 The `color` property should be set and will be updated through Ember's two-way bindings.
 
-It's also possible to bind an action to the `onChange` attribute. The action handler will receive the new color as a
+It's also possible to bind actions to the `onChange`, `onMove`, `onShow`, and `onHide` attributes. The action handler will receive the new color as a
 parameter:
 
  ``` handlebars
- {{spectrum-color-picker color=teamColor onChange=(action "colorChanged")}}
+ {{spectrum-color-picker
+    color=teamColor
+    onChange=(action "colorChanged")
+    onShow=(action "pickerOpened")
+    onHide=(action "pickerClosed")
+    onMove=(action "userMovedColorPicker")
+}}
  ```
 
 The following properties can be set to customize a particular color picker:

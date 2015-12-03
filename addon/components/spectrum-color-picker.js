@@ -103,6 +103,30 @@ export default Ember.Component.extend({
       opts.change = updateFunction;
     }
 
+    // Move Event
+    let onMove = self.get('onMove');
+    if (onMove) {
+        opts.move = function (newColor) {
+          onMove(newColor ? newColor.toString() : null);
+        };
+    }
+
+    // Hide Event
+    let onHide = self.get('onHide');
+    if (onHide) {
+        opts.hide = function (newColor) {
+          onHide(newColor ? newColor.toString() : null);
+        };
+    }
+
+    // Show Event
+    let onShow = self.get('onShow');
+    if (onShow) {
+        opts.show = function (newColor) {
+          onShow(newColor ? newColor.toString() : null);
+        };
+    }
+
     this.$().spectrum(opts);
   }
 });
