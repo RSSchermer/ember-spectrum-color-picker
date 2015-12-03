@@ -1,5 +1,19 @@
 # Ember Spectrum color picker change log
 
+## 0.4.0
+
+Adds `onMove`, `onShow`, and `onHide` attributes which can be set to an action. The action handlers will receive the
+new color value as a parameter upon a color change:
+
+``` handlebars
+{{spectrum-color-picker
+    color=teamColor
+    onShow=(action "pickerOpened")
+    onHide=(action "pickerClosed")
+    onMove=(action "userMovedColorPicker")
+}}
+```
+
 ## 0.3.0
 
 Adds an `onChange` attribute which can be set to an action. The action handler will receive the new color value as
