@@ -97,10 +97,10 @@ export default Ember.Component.extend({
       }
     };
 
+    opts.change = updateFunction;
+
     if (this.get('moveFiresChange')) {
       opts.move = updateFunction;
-    } else {
-      opts.change = updateFunction;
     }
 
     // Move Event
