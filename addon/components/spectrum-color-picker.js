@@ -128,5 +128,9 @@ export default Ember.Component.extend({
     }
 
     this.$().spectrum(opts);
+  },
+
+  willDestroyElement: function() {
+    this.$().spectrum('destroy');
   }
 });
