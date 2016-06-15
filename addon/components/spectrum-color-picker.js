@@ -90,7 +90,9 @@ export default Ember.Component.extend({
       let color = newColor ? newColor.toString() : null;
       let onChange = self.get('onChange');
 
-      self.set('color', color);
+      if (!self.isDestroyed) {
+        self.set('color', color);
+      }
 
       if (onChange) {
         onChange(color);
