@@ -1,6 +1,6 @@
 {
   "name": "ember-spectrum-color-picker",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "Simple Ember component wrapper for the Spectrum.js color picker.",
   "directories": {
     "doc": "doc",
