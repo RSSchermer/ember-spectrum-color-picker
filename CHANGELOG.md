@@ -1,5 +1,9 @@
 # Ember Spectrum color picker change log
 
+## 0.5.0
+
+Adds `maxSelectionSize` attribute, which sets the maximum number of colors shown on the palette (thanks @sethphillips!).
+
 ## 0.4.0
 
 Adds `onMove`, `onShow`, and `onHide` attributes which can be set to an action. The action handlers will receive the
