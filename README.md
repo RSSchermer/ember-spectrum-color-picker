@@ -52,6 +52,7 @@ The following properties can be set to customize a particular color picker:
   colors.
 * `showSelectionPalette` (default: `false`): shows a palette with the colors that were picked previously by the user.
 * `hideAfterPaletteSelect` (default: `false`): when set to true, the palette will close when a color is selected.
+* `maxSelectionSize` (default: 7): sets the maximum number of colors shown on the palette.
 * `moveFiresChange` (default: `false`): when set to true, the color value will be updated in real time, instead of only
   once the user clicks the 'choose' button.
 * `clickoutFiresChange` (default: `false`): when set to true, the color value will also update when the user clicks

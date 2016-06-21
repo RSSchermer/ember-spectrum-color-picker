@@ -31,6 +31,8 @@ export default Ember.Component.extend({
 
   showSelectionPalette: false,
 
+  maxSelectionSize: 7,
+
   hideAfterPaletteSelect: false,
 
   preferredFormat: null,
@@ -50,6 +52,7 @@ export default Ember.Component.extend({
   appendTo: 'body',
 
   localStorageKey: 'spectrum-color-picker',
+
 
   updatePicker: Ember.observer('color', function () {
     this.$().spectrum('set', this.get('color'));
@@ -75,6 +78,7 @@ export default Ember.Component.extend({
       palette: (typeof(palette) === 'string') ? JSON.parse(palette) : palette,
       togglePaletteOnly: this.get('togglePaletteOnly'),
       showSelectionPalette: this.get('showSelectionPalette'),
+      maxSelectionSize: this.get('maxSelectionSize'),
       hideAfterPaletteSelect: this.get('hideAfterPaletteSelect'),
       preferredFormat: this.get('preferredFormat'),
       clickoutFiresChange: this.get('clickoutFiresChange'),
