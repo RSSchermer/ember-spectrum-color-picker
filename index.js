@@ -6,8 +6,9 @@ module.exports = {
 
   included: function(app) {
     this._super.included(app);
-
-    app.import('bower_components/spectrum/spectrum.js');
+    if (process.env.EMBER_CLI_FASTBOOT !== 'true') {
+      app.import('bower_components/spectrum/spectrum.js');
+    }
     app.import('bower_components/spectrum/spectrum.css');
   }
 };
