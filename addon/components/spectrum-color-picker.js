@@ -3,9 +3,9 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   classNames: 'spectrum-color-picker',
 
-  containerClassName: 'ember-spectrum-container',
+  containerClassName: 'spectrum-color-picker-container',
 
-  replacerClassName: 'ember-spectrum-replacer',
+  replacerClassName: 'spectrum-color-picker-replacer',
 
   tagName: 'input',
 
