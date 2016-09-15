@@ -3,6 +3,10 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   classNames: 'spectrum-color-picker',
 
+  containerClassName: 'spectrum-color-picker-container',
+
+  replacerClassName: 'spectrum-color-picker-replacer',
+
   tagName: 'input',
 
   color: null,
@@ -67,6 +71,8 @@ export default Ember.Component.extend({
     let opts = {
       color: this.get('color'),
       flat: this.get('flatMode'),
+      containerClassName: this.get('containerClassName'),
+      replacerClassName: this.get('replacerClassName'),
       allowEmpty: this.get('allowEmpty'),
       disabled: this.get('disabled'),
       showInput: this.get('showInput'),
