@@ -1,10 +1,12 @@
-/* jshint node: true */
+/* eslint-env node */
 'use strict';
 
 var path = require('path');
+var Funnel = require('broccoli-funnel');
+var mergeTrees = require('broccoli-merge-trees');
 
 var defaults = {
-  assetPath: 'bower_components/spectrum'
+  assetPath: 'vendor'
 };
 
 module.exports = {
@@ -22,5 +24,13 @@ module.exports = {
     }
 
     app.import(path.join(assetPath, 'spectrum.css'));
+  },
+
+  treeForVendor(vendorTree) {
+    var spectrumTree = new Funnel(path.dirname(require.resolve('spectrum-colorpicker')), {
+      files: ['spectrum.js', 'spectrum.css']
+    });
+
+    return vendorTree ? mergeTrees([vendorTree, spectrumTree]) : spectrumTree;
   }
 };
