@@ -1,5 +1,10 @@
 # Ember Spectrum color picker change log
 
+## 0.6.0
+
+This version drops the dependency on Bower and switches to NPM to manage the Spectrum.js dependency. If this causes
+problems with your application, please let me know in [issue 17](https://github.com/RSSchermer/ember-spectrum-color-picker/issues/17).
+
 ## 0.5.0
 
 Adds `maxSelectionSize` attribute, which sets the maximum number of colors shown on the palette (thanks @sethphillips!).
