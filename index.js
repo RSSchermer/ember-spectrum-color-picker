@@ -23,7 +23,9 @@ module.exports = {
       app.import(path.join(assetPath, 'spectrum.js'));
     }
 
-    app.import(path.join(assetPath, 'spectrum.css'));
+    if (options.includeStyles) {
+      app.import(path.join(assetPath, 'spectrum.css'));
+    }
   },
 
   treeForVendor(vendorTree) {
