@@ -1,5 +1,25 @@
 # Ember Spectrum color picker change log
 
+## 0.7.0
+
+Adds configuration option to disable including the default css in case you wish to provide your own css:
+
+```js
+// config/environment.js
+
+...
+
+let ENV = {
+  ...
+
+  emberSpectrumColorPicker: {
+    includeStyles: false
+  }
+}
+
+...
+```
+
 ## 0.6.0
 
 This version drops the dependency on Bower and switches to NPM to manage the Spectrum.js dependency. If this causes
