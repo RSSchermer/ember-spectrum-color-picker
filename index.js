@@ -28,7 +28,7 @@ module.exports = {
   },
 
   treeForVendor(vendorTree) {
-    var dir = path.dirname(require.resolve('spectrum-colorpicker'))
+    var dir = path.dirname(require.resolve('spectrum-colorpicker'));
     var spectrumJsTree = new Funnel(dir, {
       files: ['spectrum.js']
     });
