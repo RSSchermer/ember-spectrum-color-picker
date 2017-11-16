@@ -28,11 +28,17 @@ module.exports = {
   },
 
   treeForVendor(vendorTree) {
-    var spectrumTree = new Funnel(path.dirname(require.resolve('spectrum-colorpicker')), {
-      files: ['spectrum.js', 'spectrum.css']
+    var dir = path.dirname(require.resolve('spectrum-colorpicker'))
+    var spectrumJsTree = new Funnel(dir, {
+      files: ['spectrum.js']
+    });
+    var spectrumCssTree = new Funnel(dir, {
+      files: ['spectrum.css']
     });
 
-    spectrumTree = map(spectrumTree, (content) => `if (typeof FastBoot === 'undefined') { ${content} }`);
+    spectrumJsTree = map(spectrumJsTree, (content) => `if (typeof FastBoot === 'undefined') { ${content} }`);
+
+    var spectrumTree = mergeTrees([spectrumJsTree, spectrumCssTree]);
 
     return vendorTree ? mergeTrees([vendorTree, spectrumTree]) : spectrumTree;
   }
