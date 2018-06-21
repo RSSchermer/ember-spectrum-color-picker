@@ -1,6 +1,6 @@
 {
   "name": "ember-spectrum-color-picker",
-  "version": "0.7.2",
+  "version": "0.8.0",
   "description": "Simple Ember component wrapper for the Spectrum.js color picker.",
   "keywords": [
     "ember-addon",

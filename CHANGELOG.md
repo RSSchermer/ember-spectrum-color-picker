@@ -1,5 +1,9 @@
 # Ember Spectrum color picker change log
 
+## 0.8.0
+
+The `palette` option will now dynamically update, thanks to @coreypmurphy.
+
 ## 0.7.0
 
 Adds configuration option to disable including the default css in case you wish to provide your own css:
