@@ -57,6 +57,9 @@ export default Ember.Component.extend({
 
   localStorageKey: 'spectrum-color-picker',
 
+  updatePalette: Ember.observer('palette', function () {
+    this.$().spectrum('option', 'palette', this.get('palette'));
+  }),
 
   updatePicker: Ember.observer('color', function () {
     this.$().spectrum('set', this.get('color'));
