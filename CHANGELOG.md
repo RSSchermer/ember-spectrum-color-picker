@@ -1,5 +1,10 @@
 # Ember Spectrum color picker change log
 
+## 0.9.0
+
+Exposes `getOptions`, `setCallbacks` and `initSpectrum` to allow easier customization from subclassed components,
+thanks to @nateevans!
+
 ## 0.8.0
 
 The `palette` option will now dynamically update, thanks to @coreypmurphy.
