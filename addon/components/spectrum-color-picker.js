@@ -69,9 +69,9 @@ export default Ember.Component.extend({
     this.$().spectrum(this.get('disabled') ? 'disable' : 'enable');
   }),
 
-  didInsertElement() {
+  getOptions() {
     let palette = this.get('palette');
-    let opts = {
+    return {
       color: this.get('color'),
       flat: this.get('flatMode'),
       containerClassName: this.get('containerClassName'),
@@ -98,6 +98,9 @@ export default Ember.Component.extend({
       appendTo: this.get('appendTo'),
       localStorageKey: this.get('localStorageKey')
     };
+  },
+
+  setCallbacks(opts) {
     let self = this;
     let updateFunction = function (newColor) {
       let color = newColor ? newColor.toString() : null;
@@ -121,31 +124,41 @@ export default Ember.Component.extend({
     // Move Event
     let onMove = self.get('onMove');
     if (onMove) {
-        opts.move = function (newColor) {
-          onMove(newColor ? newColor.toString() : null);
-        };
+      opts.move = function (newColor) {
+        onMove(newColor ? newColor.toString() : null);
+      };
     }
 
     // Hide Event
     let onHide = self.get('onHide');
     if (onHide) {
-        opts.hide = function (newColor) {
-          onHide(newColor ? newColor.toString() : null);
-        };
+      opts.hide = function (newColor) {
+        onHide(newColor ? newColor.toString() : null);
+      };
     }
 
     // Show Event
     let onShow = self.get('onShow');
     if (onShow) {
-        opts.show = function (newColor) {
-          onShow(newColor ? newColor.toString() : null);
-        };
+      opts.show = function (newColor) {
+        onShow(newColor ? newColor.toString() : null);
+      };
     }
 
+    return opts;
+  },
+
+  initSpectrum(opts) {
     this.$().spectrum(opts);
   },
 
-  willDestroyElement: function() {
+  didInsertElement() {
+    let opts = this.getOptions();
+    this.setCallbacks(opts);
+    this.initSpectrum(opts);
+  },
+
+  willDestroyElement() {
     this.$().spectrum('destroy');
   }
 });
