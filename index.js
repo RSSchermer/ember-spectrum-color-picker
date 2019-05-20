@@ -16,15 +16,14 @@ module.exports = {
   included: function(app) {
     this._super.included(app);
 
-    var target = this._findApp(app);
-    var options = (target && target.project.config(target.env)['emberSpectrumColorPicker']) || {};
+    var options = (app && app.project.config(app.env)['emberSpectrumColorPicker']) || {};
 
     var assetPath = options.assetPath || defaults.assetPath;
 
-    target.import(path.join(assetPath, 'spectrum.js'));
+    app.import(path.join(assetPath, 'spectrum.js'));
 
     if (options.includeStyles) {
-      target.import(path.join(assetPath, 'spectrum.css'));
+      app.import(path.join(assetPath, 'spectrum.css'));
     }
   },
 
@@ -42,20 +41,5 @@ module.exports = {
     var spectrumTree = mergeTrees([spectrumJsTree, spectrumCssTree]);
 
     return vendorTree ? mergeTrees([vendorTree, spectrumTree]) : spectrumTree;
-  },
-
-  _findApp: function(hostApp) {
-    var app = this.app || hostApp;
-    var parent = this.parent;
-
-    while (parent.parent) {
-      if (parent.app) {
-        app = parent.app;
-        break;
-      }
-
-      parent = parent.parent;
-    }
-    return app;
-  },
+  }
 };
