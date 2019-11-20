@@ -23,6 +23,7 @@
     "test": "ember try:each"
   },
   "dependencies": {
+    "@ember/jquery": "^1.1.0",
     "ember-cli-babel": "^6.3.0",
     "spectrum-colorpicker": "1.8.0"
   },
