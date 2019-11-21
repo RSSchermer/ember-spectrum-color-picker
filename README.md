@@ -1,4 +1,4 @@
-my-addon
+ember-spectrum-color-picker
 ==============================================================================
 
 Simple Ember color picker component based on [spectrum.js](http://bgrins.github.io/spectrum/).
