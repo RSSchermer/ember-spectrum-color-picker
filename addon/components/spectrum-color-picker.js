@@ -31,7 +31,7 @@ export default Component.extend({
 
   showPaletteOnly: false,
 
-  palette: [],
+  palette: [], // eslint-disable-line
 
   togglePaletteOnly: false,
 
@@ -59,14 +59,17 @@ export default Component.extend({
 
   localStorageKey: 'spectrum-color-picker',
 
+  // eslint-disable-next-line
   updatePalette: observer('palette', function () {
     $(this.element).spectrum('option', 'palette', this.get('palette'));
   }),
 
+  // eslint-disable-next-line
   updatePicker: observer('color', function () {
     $(this.element).spectrum('set', this.get('color'));
   }),
 
+  // eslint-disable-next-line
   updateDisabled: observer('disabled', function () {
     $(this.element).spectrum(this.get('disabled') ? 'disable' : 'enable');
   }),
