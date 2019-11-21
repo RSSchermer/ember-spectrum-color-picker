@@ -1,7 +1,8 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { observer } from '@ember/object';
 import $ from 'jquery'
 
-export default Ember.Component.extend({
+export default Component.extend({
   classNames: 'spectrum-color-picker',
 
   containerClassName: 'spectrum-color-picker-container',
@@ -58,15 +59,15 @@ export default Ember.Component.extend({
 
   localStorageKey: 'spectrum-color-picker',
 
-  updatePalette: Ember.observer('palette', function () {
+  updatePalette: observer('palette', function () {
     $(this.element).spectrum('option', 'palette', this.get('palette'));
   }),
 
-  updatePicker: Ember.observer('color', function () {
+  updatePicker: observer('color', function () {
     $(this.element).spectrum('set', this.get('color'));
   }),
 
-  updateDisabled: Ember.observer('disabled', function () {
+  updateDisabled: observer('disabled', function () {
     $(this.element).spectrum(this.get('disabled') ? 'disable' : 'enable');
   }),
 
