@@ -1,5 +1,9 @@
 # Ember Spectrum color picker change log
 
+## 0.10.0
+
+Updated for ember-cli 3.12, thanks to @alexdiliberto! This updates the NodeJS version requirement from 4.0 to 8.0.
+
 ## 0.9.0
 
 Exposes `getOptions`, `setCallbacks` and `initSpectrum` to allow easier customization from subclassed components,
