@@ -1,14 +1,26 @@
-# Ember-spectrum-color-picker
+ember-spectrum-color-picker
+==============================================================================
 
 Simple Ember color picker component based on [spectrum.js](http://bgrins.github.io/spectrum/).
 
-## Installation
+
+Compatibility
+------------------------------------------------------------------------------
+
+* Ember.js v3.4 or above
+* Ember CLI v2.13 or above
+* Node.js v8 or above
+
+
+Installation
+------------------------------------------------------------------------------
 
 ```
 ember install ember-spectrum-color-picker
 ```
 
-## Usage
+Usage
+------------------------------------------------------------------------------
 
 Example:
 
@@ -84,3 +96,14 @@ export default SpectrumColorPickerComponent.extend({
   showAlpha: true
 });
 ```
+
+Contributing
+------------------------------------------------------------------------------
+
+See the [Contributing](CONTRIBUTING.md) guide for details.
+
+
+License
+------------------------------------------------------------------------------
+
+This project is licensed under the [MIT License](LICENSE.md).

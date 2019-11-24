@@ -1,10 +1,9 @@
-/* eslint-env node */
 'use strict';
 
 var path = require('path');
-var Funnel = require('broccoli-funnel');
-var mergeTrees = require('broccoli-merge-trees');
-var map = require('broccoli-stew').map;
+var Funnel = require('broccoli-funnel'); // eslint-disable-line
+var mergeTrees = require('broccoli-merge-trees'); // eslint-disable-line
+var map = require('broccoli-stew').map; // eslint-disable-line
 
 var defaults = {
   assetPath: 'vendor'
